@@ -1,0 +1,14 @@
+{
+  "name": "Ncache",
+  "version": "1.0",
+  "description": "Network scanning tool made fully in python",
+  "features": [
+    "ARP Scan",
+    "Host Scan",
+    "ICMP Scan",
+    "Passive Scan",
+    "Local System info",
+    "Vendor lookup",
+    "save results"
+  ]
+}

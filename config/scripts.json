@@ -1,0 +1,38 @@
+[
+  {
+    "name": "ARP Scan",
+    "command": "-As [Subnet]",
+    "description": "Crafts a ARP packet that collects Ip Addresses, Mac Addresses, Vendors ",
+    "note": "This script creates alot of traffic based on your subnet mask"
+  },
+  {
+    "name": "Host Scan",
+    "command": "-Hs [IpAddress]",
+    "description": "Crafts one ARP packet that collects the Target Mac Addresse, Vendor",
+    "note": "This script dosent make alot of traffic"
+  },
+  {
+    "name": "ICMP Scan",
+    "command": "-Is [Subnet]",
+    "description": "Crafts a ICMP packet that collects the Subnet Ip Addresses, Mac Addresses, Vendors based on the ICMP reply",
+    "note": "This script creates alot of traffic based on your subnet mask"
+  },
+  {
+    "name": "Passive Scan",
+    "command": "-Ps [Subnet]",
+    "description": "Sniffs the Network Ip Addresses, Mac Addresses, Vendors",
+    "note": "This script collects Ip Addresses, Mac Addresses, Vendors passively with no traffic made"
+  },
+  {
+    "name": "System info",
+    "command": "-info",
+    "description": "Collects local info about your system",
+    "note": "This script collects system Hostname, Ip Address, Mac Address"
+  },
+  {
+    "name": "Vendor Scan",
+    "command": "-V [MacAddress]",
+    "description": "Grabs Target Vendor",
+    "note": "This script works without network connection unless you use a Ip Address as a target"
+  }
+]
