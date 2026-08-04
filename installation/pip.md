@@ -8,13 +8,14 @@
 
 `sudo apt install python3-pip`
 
-## Pip installation guide Linux-Fedora
-
+### Linux-fedora
 `sudo dnf install python3-pip`
 
-## Pip installation guide Linux-Arch
+### Linux-Arch
 
 `sudo pacman -S python-pip`
+
+# 
 
 ### Verify installation
 
