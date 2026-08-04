@@ -18,38 +18,31 @@ Ncache is a lightweight Python-based network scanner for host discovery and netw
 - Adjustable scan timing options
 
 ## Installation
-
-- git clone https://github.com/Mata4r/Ncache.git
-- cd Ncache
-- pip install -r requirements.txt
+```bash
+git clone https://github.com/Mata4r/Ncache.git
+```
+```bash
+cd Ncache
+```
+```bash
+pip install -r requirements.txt
+```
 
 ## Usage
 Run the scanner from the project root:
 
-```bash
-python ncache.py -As 192.168.1.0/24
-```
-```bash
-python ncache.py -Is 192.168.1.0/24
-```
-```bash
-python ncache.py -Ps 192.168.1.0
-```
-```bash
-python ncache.py -Hs 192.168.1.0
-```
-```bash
-python ncache.py -V 00:1A:2B:3C:4D:5E
-```
-```bash
-python ncache.py -info
-```
 
-### Windows setup notes
+`python ncache.py -As 192.168.1.0/24`
 
-- `scapy` on Windows requires an Npcap-compatible packet driver (Npcap). Install Npcap from https://nmap.org/npcap/ and enable "Support raw 802.11 traffic" only if you need wireless capture.
-- Run scans from an elevated (Administrator) PowerShell/Command Prompt so raw packet operations work correctly.
-- After installing Npcap, install Python dependencies:
+`python ncache.py -Is 192.168.1.0/24`
+
+`python ncache.py -Ps 192.168.1.0`
+
+`python ncache.py -Hs 192.168.1.0`
+
+`python ncache.py -V 00:1A:2B:3C:4D:5E`
+
+`python ncache.py -info`
 
 ```bash
 pip install -r requirements.txt
