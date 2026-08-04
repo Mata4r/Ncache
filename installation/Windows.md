@@ -3,10 +3,9 @@
 - Run CMD as administrator
 - git clone https://github.com/Mata4r/Ncache.git
 - cd Ncache
+- pip install -r requirements.txt
 - Run your first script e.g.
-```bash
-python ncache.py -As [Subnet]
-```
+`python ncache.py -As [Subnet]`
 
 
 ## Windows setup notes
