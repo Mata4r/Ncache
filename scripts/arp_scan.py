@@ -52,7 +52,7 @@ def start_arp_scan(Target,
         
         print()
 
-        print(f"Initiating Ncache scan\nNcache scan report for {Target}\n")
+        print(f"-Initiating Ncache scan\n-Ncache scan report for {Target}\n")
         console.print("IP Address\tMAC Address\t    Vendor",style="italic magenta")
         
         for sent, recv in answered:
