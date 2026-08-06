@@ -1,6 +1,7 @@
 
 from scapy.all import get_if_hwaddr, conf
-from rich.console import print
+from rich.console import Console
+from rich import print
 import socket
 
 console = Console()
