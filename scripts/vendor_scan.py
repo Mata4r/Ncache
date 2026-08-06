@@ -9,7 +9,6 @@ console = Console()
 
 def vendor(Target,
            save=False):
-
     start = time.perf_counter()
     
     lookup = MacLookup()
