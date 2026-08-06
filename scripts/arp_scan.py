@@ -49,8 +49,6 @@ def start_arp_scan(Target,
             
         lookup = MacLookup()
         seen = set()
-        
-        print()
 
         print(f"-Initiating Ncache scan\n-Ncache scan report for {Target}\n")
         console.print("IP Address\tMAC Address\t    Vendor",style="italic magenta")
