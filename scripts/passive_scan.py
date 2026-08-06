@@ -42,7 +42,8 @@ def start_passive_scan(subnet, save=False):
     
     print("\nListening...")
     print("Press Ctrl+C to stop.\n")
-    
+  
+    print(f"-Initiating Ncache scan\n-Ncache scan report for {Target}\n")
     console.print("IP address\tMac Address\t    Vendor", style="italic magenta")
 
     try:
