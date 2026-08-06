@@ -7,7 +7,6 @@ import socket
 console = Console()
 
 def system_info():
-    
     try:
         hostname = socket.gethostname()
         local_ip = socket.gethostbyname(socket.gethostname())
