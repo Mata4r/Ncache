@@ -2,15 +2,13 @@
 from scapy.all import sniff, IP, Ether, ICMP, sendp, ARP
 from mac_vendor_lookup import MacLookup
 from rich.console import Console
+import ipaddress
 
 devices = {}
 console = Console()
 
 def packet_listener(Target,
                     packet):
-    Target_split = Target.split(".")
-    network_prefix = Target_split[0]      
-
 
     if IP in packet and Ether in packet:
         ip_address = packet[IP].src
@@ -20,9 +18,13 @@ def packet_listener(Target,
         mac_address = packet[ARP].hwsrc
     else:
         return
-        
-        
-    if not ip_address.startswith(network_prefix):
+
+    network = ipaddress.ip_network(Target, strict=False)
+
+    try:
+        if ipaddress.ip_address(ip_address) not in network:
+            return
+    except ValueError:
         return
 
     lookup = MacLookup()
@@ -37,7 +39,7 @@ def packet_listener(Target,
         devices[ip_address] = (mac_address, vendor)
         print(f"{ip_address}\t{mac_address}   {vendor}")
 
-def start_passive_scan(subnet, save=False):
+def start_passive_scan(Target, save=False):
     print("\nListening...")
     print("Press Ctrl+C to stop.\n")
   
@@ -45,7 +47,7 @@ def start_passive_scan(subnet, save=False):
     console.print("IP address\tMac Address\t    Vendor", style="italic magenta")
 
     try:
-        result = sniff(prn=lambda pkt: packet_listener(pkt, subnet), store=False)
+        result = sniff(prn=lambda pkt: packet_listener(Target, pkt), store=False)
     except KeyboardInterrupt as e:
         print(e)
     
