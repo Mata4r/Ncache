@@ -28,6 +28,7 @@ def start_host_scan(Target,
     
     if answered:
         print()
+        print(f"-Initiating Ncache scan\n-Ncache scan report for {Target}\n")
         console.print("IP Address\tMAC Address\t\tVendor", style="italic magenta")
         seen = set()
 
