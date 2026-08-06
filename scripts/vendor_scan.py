@@ -17,10 +17,15 @@ def vendor(Target,
     
     if valid_mac(Target):
         vendor = lookup.lookup(Target)
-        
+
+        print(f"-Initiating Ncache scan\n-Ncache scan report for {Target}\n")
         console.print(f"Mac Address\t\tVendor", style="italic magenta")
         print(f"{Target}\t{vendor}")
+        elapsed = time.perf_counter() - start
+        print(f"\nScan completed in {elapsed:.2f} seconds\n")
     else:
+        start = time.perf_counter()
+
         ether = Ether(dst="ff:ff:ff:ff:ff:ff")
         arp = ARP(pdst=Target)
         
@@ -35,7 +40,7 @@ def vendor(Target,
                 vendor = lookup.lookup(recv.hwsrc)
             except Exception:
                 vendor = "Unknown"
-            print()
+        print(f"-Initiating Ncache scan\n-Ncache scan report for {Target}\n")
         console.print(f"Mac Address\t\tVendor", style="magenta")
         result = print(f"{recv.hwsrc}\t{vendor}")
 
