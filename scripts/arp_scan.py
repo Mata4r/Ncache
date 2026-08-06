@@ -51,6 +51,8 @@ def start_arp_scan(Target,
         seen = set()
         
         print()
+
+        print(f"Initiating Ncache scan\nNcache scan report for {Target}\n")
         console.print("IP Address\tMAC Address\t    Vendor",style="italic magenta")
         
         for sent, recv in answered:
