@@ -6,9 +6,8 @@ from rich.console import Console
 devices = {}
 console = Console()
 
-def packet_listener(packet,
-                    Target):
-    
+def packet_listener(Target,
+                    packet):
     Target_split = Target.split(".")
     network_prefix = Target_split[0]      
 
@@ -39,7 +38,6 @@ def packet_listener(packet,
         print(f"{ip_address}\t{mac_address}   {vendor}")
 
 def start_passive_scan(subnet, save=False):
-    
     print("\nListening...")
     print("Press Ctrl+C to stop.\n")
   
