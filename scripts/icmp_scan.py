@@ -53,7 +53,6 @@ def start_icmp_scan(Target,
     
     
     if answered:
-        print()
         print(f"-Initiating Ncache scan\n-Ncache scan report for {Target}\n")
         console.print("IP Address",style="italic magenta")
         
